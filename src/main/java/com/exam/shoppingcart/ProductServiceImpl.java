@@ -24,27 +24,6 @@ public class ProductServiceImpl implements ProductService {
         return productRepo.findById(id).orElse(null);
     }
 
-    // public CandidateAcademicInfo updateAcademicInformation(Long id, CandidateAcademicInfo academicInformation){
-    //     Optional<CandidateAcademicInfo> academicInformationOptional = academicInfoRepo.findById(id);
-    //     if(academicInformationOptional.isPresent()) {
-    //         CandidateAcademicInfo existingAcademicInformation = academicInformationOptional.get();
-    //         existingAcademicInformation.setCurrentDegree(academicInformation.getCurrentDegree());
-    //         existingAcademicInformation.setUserId(academicInformation.getUserId());
-    //         existingAcademicInformation.setCgpa(academicInformation.getCgpa());
-    //         // existingAcademicInformation.setCertificates(academicInformation.getCertificates());
-    //         existingAcademicInformation.setTitle(academicInformation.getTitle());
-    //         existingAcademicInformation.setInstitute(academicInformation.getInstitute());
-    //         existingAcademicInformation.setFinalYearProject(academicInformation.getFinalYearProject());
-    //         existingAcademicInformation.setDegreeProgress(academicInformation.getDegreeProgress());
-    //         existingAcademicInformation.setGraduationDate(academicInformation.getGraduationDate());
-    //         academicInfoRepo.save(existingAcademicInformation);
-    //         return existingAcademicInformation;
-    //     }
-    //     else {
-    //         return null;
-    //     }
-    // }
-
     public void deleteProduct(Long id) {
         productRepo.deleteById(id);
     }

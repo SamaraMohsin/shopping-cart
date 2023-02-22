@@ -81,8 +81,8 @@ public class ShoppingCartControllerTests {
 	public void canSaveProduct() throws Exception {
 		Product prod1 = new Product(1L,
         "https://raw.githubusercontent.com/jeff-lent/Alisnobba/main/Capstone/ActualRubyRubySlippers.jpg", 
-        "Ruby Slippers", "An impressive pair of slippers featuring thousands of real rubies",
-         (double) 684750000,2);
+        "Ruby Slippers", "An impressive pair of slippers featuring thousands of real rubies", "long desc",
+         (double) 684750000);
 		when(productService.saveProduct(prod1)).thenReturn(prod1);
 		mvc.perform(post("/api/products")
 				.contentType(MediaType.APPLICATION_JSON)
@@ -94,13 +94,13 @@ public class ShoppingCartControllerTests {
 	public void canGetAllProducts() throws Exception {
 		Product prod1 = new Product(1L,
         "https://raw.githubusercontent.com/jeff-lent/Alisnobba/main/Capstone/ActualRubyRubySlippers.jpg", 
-        "Ruby Slippers", "An impressive pair of slippers featuring thousands of real rubies",
-         (double) 684750000,2);
+        "Ruby Slippers", "An impressive pair of slippers featuring thousands of real rubies", "long desc",
+         (double) 684750000);
         
          Product prod2 = new Product(2L,
          "https://raw.githubusercontent.com/jeff-lent/Alisnobba/main/Capstone/ActualRubyRubySlippers.jpg", 
-         "Ruby Slippers", "An impressive pair of slippers featuring thousands of real rubies",
-          (double) 684750000,3);
+         "Ruby Slippers", "An impressive pair of slippers featuring thousands of real rubies", "long desc",
+          (double) 684750000);
 
 		List<Product> allProducts = new ArrayList<Product>();
 		allProducts.add(prod1);
@@ -116,8 +116,8 @@ public class ShoppingCartControllerTests {
 	public void canGetProductById() throws Exception {
 		Product prod1 = new Product(1L,
         "https://raw.githubusercontent.com/jeff-lent/Alisnobba/main/Capstone/ActualRubyRubySlippers.jpg", 
-        "Ruby Slippers", "An impressive pair of slippers featuring thousands of real rubies",
-         (double) 684750000,2);
+        "Ruby Slippers", "An impressive pair of slippers featuring thousands of real rubies","long desc",
+         (double) 684750000);
 		when(productService.getProductById(1L)).thenReturn(prod1);
 		mvc.perform(get("/api/products/1")
 				.contentType(MediaType.APPLICATION_JSON)
@@ -131,8 +131,8 @@ public class ShoppingCartControllerTests {
 	public void canDeleteProducts() throws Exception {
 		Product prod1 = new Product(1L,
         "https://raw.githubusercontent.com/jeff-lent/Alisnobba/main/Capstone/ActualRubyRubySlippers.jpg", 
-        "Ruby Slippers", "An impressive pair of slippers featuring thousands of real rubies",
-         (double) 684750000,2);
+        "Ruby Slippers", "An impressive pair of slippers featuring thousands of real rubies","long desc",
+         (double) 684750000);
 		when(productService.getProductById(1L)).thenReturn(prod1);
 		mvc.perform(delete("/api/products/1"))
 			.andExpect(status().isNoContent());

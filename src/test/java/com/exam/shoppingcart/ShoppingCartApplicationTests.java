@@ -45,7 +45,7 @@ class ShoppingCartApplicationTests {
 	}
 
 	@Test
-	void getAndSetProductDescription(){
+	void getAndSetProductShortDescription(){
 		Product cut = new Product();
 		String prodDesc = "An impressive pair of slippers featuring thousands of real rubies";
 		cut.setShortDescription(prodDesc);
@@ -61,12 +61,22 @@ class ShoppingCartApplicationTests {
 	}
 
 	@Test
-	void getAndSetProductQuantity(){
+	void getAndSetProductLongDescription(){
 		Product cut = new Product();
-		Integer prodQuantity = 2;
-		cut.setProdQuantity(prodQuantity);
-		assertEquals(prodQuantity, cut.getProdQuantity());
+		String prodDesc = "Harry Winston has carefully crafted these fantastic shoes. Each pair boasts a total of 4,600 gemstones including 1,350 carats of premium rubies and 50 carats of diamonds. You'll be the talk of the town when you wear these slippers (not to mention the target of bshoe thieves everywhere). Harry makes no promise about how comfortable these slippers are though";
+		cut.setLongDescription(prodDesc);
+		assertEquals(prodDesc, cut.getLongDescription());
 	}
+
+	
+
+	// @Test
+	// void getAndSetProductQuantity(){
+	// 	Product cut = new Product();
+	// 	Integer prodQuantity = 2;
+	// 	cut.setProdQuantity(prodQuantity);
+	// 	assertEquals(prodQuantity, cut.getProdQuantity());
+	// }
 
 
 	

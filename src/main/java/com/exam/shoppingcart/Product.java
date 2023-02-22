@@ -28,11 +28,14 @@ public class Product {
     @Column(name = "product_short_description" ,columnDefinition= "Text" )
     private String shortDescription;
 
+    @Column(name = "product_long_description" ,columnDefinition= "Text" )
+    private String longDescription;
+
     @Column(name = "product_price")
     private Double prodPrice;
 
-    @Column(name = "product_quantity" ,nullable = false )
-    private Integer prodQuantity;
+    // @Column(name = "product_quantity" ,nullable = false)
+    // private Integer prodQuantity;
 
 
 }
