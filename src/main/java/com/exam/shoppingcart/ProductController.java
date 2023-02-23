@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-@CrossOrigin
+@CrossOrigin("*")
 @RestController
 @RequestMapping("/api/products")
 public class ProductController {
@@ -45,16 +45,19 @@ public class ProductController {
     }
 
     // @PutMapping("/{id}")
-    // public ResponseEntity<CandidateAcademicInfo> updateAcademicInformation(@PathVariable Long id,
-    //         @RequestBody CandidateAcademicInfo academicInfotmation) {
-    //     CandidateAcademicInfo updatedAcademicInformation = academicInfoService.updateAcademicInformation(id,
-    //             academicInfotmation);
-    //     if (updatedAcademicInformation == null) {
-    //         return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+    // public ResponseEntity<CandidateAcademicInfo>
+    // updateAcademicInformation(@PathVariable Long id,
+    // @RequestBody CandidateAcademicInfo academicInfotmation) {
+    // CandidateAcademicInfo updatedAcademicInformation =
+    // academicInfoService.updateAcademicInformation(id,
+    // academicInfotmation);
+    // if (updatedAcademicInformation == null) {
+    // return new ResponseEntity<>(HttpStatus.NOT_FOUND);
 
-    //     } else {
-    //         return new ResponseEntity<CandidateAcademicInfo>(updatedAcademicInformation, HttpStatus.OK);
-    //     }
+    // } else {
+    // return new ResponseEntity<CandidateAcademicInfo>(updatedAcademicInformation,
+    // HttpStatus.OK);
+    // }
     // }
 
     @DeleteMapping("/{id}")
@@ -63,16 +66,11 @@ public class ProductController {
         if (product1 == null) {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         } else {
-            productService.deleteProduct(id);;
+            productService.deleteProduct(id);
+            ;
             System.out.println("product deleted successfully");
             return new ResponseEntity<>(HttpStatus.NO_CONTENT);
         }
     }
-
-
-
-
-
-
 
 }

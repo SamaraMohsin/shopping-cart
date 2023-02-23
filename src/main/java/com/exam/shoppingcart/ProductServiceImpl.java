@@ -11,12 +11,12 @@ public class ProductServiceImpl implements ProductService {
     @Autowired
     public ProductRepository productRepo;
 
-    public Product saveProduct(Product product){
+    public Product saveProduct(Product product) {
         return productRepo.save(product);
     }
 
-      // get all information
-      public List<Product> getAllProducts(){
+    // get all information
+    public List<Product> getAllProducts() {
         return productRepo.findAll();
     }
 
@@ -27,6 +27,5 @@ public class ProductServiceImpl implements ProductService {
     public void deleteProduct(Long id) {
         productRepo.deleteById(id);
     }
-
 
 }
